@@ -1,0 +1,536 @@
+<!-- roulette by Kristina -->
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <title>Mid-Autumn Festival</title>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    
+    <link rel="stylesheet" href="css/general.css" type="text/css"/>
+    <link rel="stylesheet" href="css/mobile.css" type="text/css"/>
+</head>
+<body>
+    <main id="midAutumnRoulette" style="background-image: url(images/mobile/bg.jpg);">
+        <div class="midAutumnFestival">
+            <div class="menuBtn">
+                <div class="menu-label">
+                    <img id="homeBtn" class="home-ico" src="images/home.png" alt="">
+                    <span class="wthTxtBorder" style="--edgeColor:#fff;">返回</span>
+                </div>
+                <div class="menu-label">
+                    <div id="volumeMenu" class="mr-2 div-volume mute">
+                        <img class="speaker-ico" src="images/speaker.png" alt="">
+                        <img class="mute-ico" src="images/mute.png" alt="" style="display: none;">
+                    </div>
+                    <span class="wthTxtBorder" style="--edgeColor:#fff;">音樂</span>
+                </div>
+                <div class="menu-label">
+                    <img id="bonusRecordBtn" class="bonus-ico" src="images/gift.png" alt="">
+                    <span class="wthTxtBorder" style="--edgeColor:#fff;">記錄</span>
+                </div>
+            </div>
+            <img class="midAutumnFestival-title" src="images/mobile/title_m.png" alt="">
+            <div class="time-info">
+                <p class="mb-0">時間:<span>時間:10月09日00:00至10月18日23:59</span></p>
+            </div>
+            <div class="rouletteSpin-countlabel">可玩次數: <span id="spinCount">4</span> 次</div>
+            <div class="rouletteSpinnerContainer">
+                <div class="rouletteSpinner-inner">
+                    <div class="round-spinner">
+                        <div class="pie pie_orng88" style="--prctg:16.7;--trnsfrm:rotate(0deg);">
+                            <div class="pie-prize">
+                                <div class="pie-prize-inner">
+                                    <img class="spin-img" src="images/spin/1.png" alt="">
+                                    <span class="wthTxtBorder" style="--edgeColor:#661665;">88</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pie pie_prpl888" style="--prctg:16.7;--trnsfrm:rotate(60deg);">
+                            <div class="pie-prize">
+                                <div class="pie-prize-inner">
+                                    <img class="spin-img" src="images/spin/4.png" alt="">
+                                    <span class="wthTxtBorder" style="--edgeColor:#661665;">888</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pie pie_yllw188" style="--prctg:16.7;--trnsfrm:rotate(120deg);">
+                            <div class="pie-prize">
+                                <div class="pie-prize-inner">
+                                    <img class="spin-img" src="images/spin/5.png" alt="">
+                                    <span class="wthTxtBorder" style="--edgeColor:#661665;">188</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pie pie_grn68" style="--prctg:17;--trnsfrm:rotate(180deg);">
+                            <div class="pie-prize">
+                                <div class="pie-prize-inner">
+                                    <img class="spin-img" src="images/spin/6.png" alt="">
+                                    <span class="wthTxtBorder" style="--edgeColor:#661665;">68</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pie pie_bl688" style="--prctg:16.7;--trnsfrm:rotate(240deg);">
+                            <div class="pie-prize">
+                                <div class="pie-prize-inner">
+                                    <img class="spin-img" src="images/spin/2.png" alt="">
+                                    <span class="wthTxtBorder" style="--edgeColor:#661665;">688</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pie pie_rd1888" style="--prctg:16.7;--trnsfrm:rotate(300deg);">
+                            <div class="pie-prize">
+                                <div class="pie-prize-inner">
+                                    <img class="spin-img" src="images/spin/3.png" alt="">
+                                    <span class="wthTxtBorder" style="--edgeColor:#661665;">1888</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-spin-container">
+                        <img id="spinButton" class="btn-spin" src="images/spin/button.png" alt="">
+                        <img class="btn-spin-arrow" src="images/spin/arrow.png" alt="">
+                    </div>
+                </div>
+                
+                <img class="spinround-bg" src="images/spin/rouellete_frame.png" alt="">
+            </div>
+            <div class="rulesConditionContainer">
+                <div class="activityRules">
+                    <img class="arHeader-title" src="images/mobile/activity-rules.png" alt="">
+                    <div class="arBody-con">
+                        <p class="purpleTxt">提款條件:彩金需要5倍有效投註量,即可進行提款。</p>
+                        <p class="vermillionTxt">彩金需要3倍有效投注量:(本金+彩金)*3倍,即可進行託售。</p>
+                        <div class="bulletTxt-con">
+                            <p class="bulletTxt">● 有效投注定義:體育投注(若投注内出現輸或贏半的情況,系統將計算總投注 額的一般為有效投注),任何和局、取消的賽事投注,任何未產生輸贏結果的、 投注失敗的、對押的投注;真人館任何和局,無風險投注,免傭不計算、計算賠率 后有效投注量。</p>
+                            <p class="bulletTxt">● 為秉持公平公正原則,本娛樂平台有權對會員進行監控,若發生違背、欺騙或 利用不正當手段進行非法獲利者,我們將有權凍結您帳號內點數。</p>
+                            <p class="bulletTxt">● 為避免對文字的理解差異或活動如有任何異動,本娛樂平台保留可單方面執行的 決定權,改變此優惠活動的條款與條規/停止、終止或取消此優惠活動。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="floatingLantern"></div>
+    </main>
+    <!-- bonus price modal  -->
+    <div id="bonusPopupContainer">
+        <div id="bonusPopupContainerOverlay" class="bonusPopupContainer-overlay">
+            <div class="bpuCon">
+                <div id="bonusPopupContainerInner" class="bonusPopupContainer-inner" style="background-image: url(images/popup/pop.png);">
+                    <div id="bonusPopUpClose" class="closeButton-popup"></div>
+                    <p class="mb-0 wthTxtBorder" style="--edgeColor:#fff;">1888</p>
+                    <img id="okayWinPop" class="okayWinPop" src="images/popup/ok-btn.png" alt="Okay button">
+                    <div class="color-cannon1" style="background-image: url(images/popup/color-cannon1.png);"></div>
+                    <div class="color-cannon2" style="background-image: url(images/popup/color-cannon2.png);"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- bonus record modal --> 
+    <div id="bonusRecordConPopUp">
+        <div class="bonusRecordContainer-Overlay">
+            <div id="bonusRecordPopupClose" class="closeButton-popup"></div>
+            <img class="bonusRecordPop" src="images/popup/bonus-record-label.png" alt="Bonus Record">
+            <div class="bonusRecordContainer-Inner">
+                <table id="bonusRecordInfo">
+                    <thead class="bonusRecordInfo-head">
+                        <tr>
+                            <th>時間</th>
+                            <th>獎金</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bonusRecordInfo-body">
+                        <tr>
+                            <td>2024/3/26 21:00:23</td>
+                            <td>5000</td>
+                        </tr>
+                        <tr>
+                            <td>2024/3/27 21:00:23</td>
+                            <td>5000</td>
+                        </tr>
+                        <tr>
+                            <td>2024/3/26 21:00:23</td>
+                            <td>5000</td>
+                        </tr>
+                        <tr>
+                            <td>2024/3/26 21:00:23</td>
+                            <td>5000</td>
+                        </tr>
+                        <tr>
+                            <td>2024/3/26 21:00:23</td>
+                            <td>5000</td>
+                        </tr>
+                        <tr>
+                            <td>2024/3/27 21:00:23</td>
+                            <td>5000</td>
+                        </tr>
+                        <tr>
+                            <td>2024/3/26 21:00:23</td>
+                            <td>5000</td>
+                        </tr>
+                        <tr>
+                            <td>2024/3/26 21:00:23</td>
+                            <td>5000</td>
+                        </tr>
+                        <tr>
+                            <td>2024/3/26 21:00:23</td>
+                            <td>5000</td>
+                        </tr>
+                    </tbody>
+                </table>    
+            </div>
+        </div>
+    </div>
+    <!-- not logged in -->
+    <div id="notLoggedInPopUp">
+        <div class="notLoggedIn-Overlay">
+            <div class="notLoggedIn-Inner">
+                <div id="notLoggedInPopupClose" class="closeButton-popup"></div>
+                <img class="notLoggedInLabel" src="images/system-prompt.png" alt="Not Logged In Label">
+                <p class="mb-0">請先登入帳號。<br> 以享受更好的遊戲體驗。</p>
+                <img id="confirmNotLoggedIn" class="confirmNotLoggedIn-btn" src="images/system-prompt-confirm.png" alt="Confirm Not Logged In">
+            </div>
+        </div>
+    </div>
+</body>
+<audio id="audioBG" src="sounds/festive-celebration-bgm.mp3" loop></audio>
+<audio id="clickSound" src="sounds/click-sound.mp3"></audio>
+<audio id="wheelSoundEffect" src="sounds/wheel-sound.mp3"></audio>
+<audio id="gongSound" src="sounds/gong-sound.mp3"></audio>
+<audio id="bonusSound" src="sounds/bonus-sound.mp3" loop></audio>
+<audio id="bonusConfirmSound" src="sounds/bonus-confirm-sound.mp3"></audio>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script>
+    // const isMobile = '{$isMobile}';
+    // const isMobile = screen.width <= 767;
+
+    // -------------------------------------------
+    document.addEventListener('DOMContentLoaded', function() {
+        var audioBG = document.getElementById("audioBG");
+        audioBG.volume = 0.2;
+        var volumeMenu = document.getElementById("volumeMenu");
+        
+        var clickSound = document.getElementById('clickSound');
+        var spinner = document.querySelector(".round-spinner");
+        var spinButton = document.getElementById('spinButton');
+        var spinCountDisplay = document.getElementById('spinCount');
+        var wheelSoundEffect = document.getElementById('wheelSoundEffect');
+
+        var gongSound = document.getElementById('gongSound');
+        gongSound.volume = 0.4;
+        var bonusSound = document.getElementById('bonusSound');
+        bonusSound.volume = 0.7;
+
+        var bonusPopupContainer = document.getElementById('bonusPopupContainer');
+        var bonusPopupContainerOverlay = document.getElementById('bonusPopupContainerOverlay');
+
+        var bonusPopUpClose = document.getElementById('bonusPopUpClose');
+        var okayWinPop = document.getElementById('okayWinPop');
+        var bonusConfirmSound = document.getElementById('bonusConfirmSound');
+
+        var bonusRecordBtn = document.getElementById('bonusRecordBtn');
+        var bonusRecordConPopUp = document.getElementById('bonusRecordConPopUp');
+        var bonusRecordPopupClose = document.getElementById('bonusRecordPopupClose');
+
+        var notLoggedInPopUp = document.getElementById('notLoggedInPopUp');
+        var notLoggedInPopupClose = document.getElementById('notLoggedInPopupClose');
+        var confirmNotLoggedIn = document.getElementById('confirmNotLoggedIn');
+
+        // if not logged in function
+        var ifLoggedIn = true;
+        function notLoggedInFunction() {
+            $(notLoggedInPopUp).css('display', 'flex');
+        }
+        
+        function closeConfirmNotLoggedIn() {
+            $(notLoggedInPopUp).css('display', 'none');
+        }
+
+        notLoggedInPopupClose.addEventListener('click', function () {
+            setTimeout(closeConfirmNotLoggedIn, 100);
+        });
+        
+        confirmNotLoggedIn.addEventListener('click', function () {
+            setTimeout(closeConfirmNotLoggedIn, 100);
+        });
+        //---------------------------------------------------
+
+        // Function to update spin count display    
+        var limitSpinCount = 4;
+        function updateSpinCountDisplay() {
+            spinCountDisplay.textContent = ifLoggedIn ? limitSpinCount : '0';
+        }
+        //---------------------------------------------------
+
+        // Function to update target variables
+        var targetValue = 1888;
+        function updateTargetVariables(value) {
+            if (value === 88) {
+                minDegrees = 304; 
+                maxDegrees = 357;
+                setClassname = 'orng'; //<-orange
+            } else if (value === 888) {
+                minDegrees = 242; 
+                maxDegrees = 297;
+                setClassname = 'prpl'; //<-purple
+            } else if (value === 188) {
+                minDegrees = 183; 
+                maxDegrees = 238;
+                setClassname = 'yllw'; //<-yellow
+            } else if (value === 68) {
+                minDegrees = 124; 
+                maxDegrees = 178;
+                setClassname = 'grn'; //<-green
+            } else if (value === 688) {
+                minDegrees = 63; 
+                maxDegrees = 118;
+                setClassname = 'bl'; //<-blue
+            } else if (value === 1888) {
+                minDegrees = 3; 
+                maxDegrees = 59;
+                setClassname = 'rd'; //<-red
+            }
+        }
+        //---------------------------------------------------
+
+        // roulette click
+        spinButton.addEventListener('click', function () {
+            if (ifLoggedIn) {
+                if (limitSpinCount > 0) {
+                    clickSound.currentTime = 0;
+                    clickSound.play(); 
+                    setTimeout(function() {
+                        $('#spinButton').css('pointerEvents', 'none');
+
+                        // Decrease spin count and update display 
+                        limitSpinCount--;
+                        updateSpinCountDisplay();
+
+                        // Update target variables based on targetValue
+                        updateTargetVariables(targetValue);
+
+                        var currentRotation = getCurrentRotationAngle(spinner); //<--Retrieve current rotation angle
+                        var targetDegrees = calculateTargetDegrees(minDegrees, maxDegrees); //<--Calculate target degrees
+                        var animationDuration = 14000; //<--Animation duration
+
+                        //play wheel sound
+                        wheelSoundEffect.currentTime = 0;
+                        wheelSoundEffect.play(); 
+
+                        // Create style element for keyframes
+                        var rotateAnimation = document.createElement('style');
+                        rotateAnimation.type = 'text/css';
+
+                        rotateAnimation.innerHTML = `
+                            .rotate-animation {
+                                animation: rotateSpinner ${animationDuration}ms forwards infinite;
+                            }
+                            
+                            @keyframes rotateSpinner {
+                                0% {
+                                    transform: rotate(${currentRotation}deg);
+                                    animation-timing-function: cubic-bezier(1, 0.7, 0.3, 0.1, 0.08, 0.07, 0.06, 0.05, 0.04, 0.03, 0.01, 0.008, 0.005, 0);
+                                }
+                                100% {
+                                    transform: rotate(${targetDegrees + 3600}deg);
+                                    animation-timing-function: linear;
+                                }
+                            }
+                        `;
+
+                        // Append keyframes to document head
+                        document.head.appendChild(rotateAnimation);
+                        spinner.classList.add("rotate-animation");
+
+                        // After animation ends
+                        setTimeout(function() {
+                            isSpinning = false;
+                            spinner.classList.remove("rotate-animation");
+                            spinner.style.transform = "rotate(" + targetDegrees + "deg)";
+
+                            // Update spin count display after animation ends
+                            wheelSoundEffect.onended = function() {
+                                updateSpinCountDisplay();
+                            
+                                gongSound.currentTime = 0;
+                                gongSound.play();
+                                $('.pie_' + setClassname + targetValue + ' .pie-prize').addClass("glowingEffect");
+
+                                setTimeout(function() {
+                                    gongSound.pause();
+                                    $('.pie_' + setClassname + targetValue + ' .pie-prize').removeClass("glowingEffect");
+                                    bonusSound.currentTime = 0;
+                                    bonusSound.play();
+                                    bonusSound.loop = true;
+                                    bonusModalAnimation()
+                                }, 3000); 
+                            } 
+                        }, animationDuration); 
+                        
+                    }, 100);
+                } else {
+                    console.log('Reached spin limit');
+                    $('#spinButton').css('pointerEvents', 'none');
+                }   
+            } else{
+                notLoggedInFunction();
+            }
+        });
+        //---------------------------------------------------
+
+        // Function to calculate random target degrees
+        function calculateTargetDegrees(minDegrees, maxDegrees) {
+            var targetDegrees = Math.random() * (maxDegrees - minDegrees) + minDegrees;
+            return targetDegrees;
+        }
+
+        // Function to get the current rotation angle
+        function getCurrentRotationAngle(element) {
+            var st = window.getComputedStyle(element, null);
+            var tr = st.getPropertyValue("transform") ||
+                    st.getPropertyValue("-webkit-transform") ||
+                    st.getPropertyValue("-moz-transform") ||
+                    st.getPropertyValue("-ms-transform") ||
+                    st.getPropertyValue("-o-transform");
+
+            if (!tr || tr === 'none') {
+                return 0; // Return default rotation
+            }
+
+            // Extract the rotation angle from the transform matrix
+            var values = tr.split('(')[1].split(')')[0].split(',');
+            var a = values[0];
+            var b = values[1];
+            var angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
+
+            // Ensure angle is positive (between 0 and 360 degrees)
+            angle = (angle < 0) ? (360 + angle) : angle;
+            
+            return angle;
+        }
+        //---------------------------------------------------
+
+        // Initial update of spin count display
+        updateSpinCountDisplay();
+        // -----------------------------------------
+
+        // Bonus modal animation
+        function bonusModalAnimation() {
+            audioBG.pause();
+            audioBG.loop = false;
+            $(bonusPopupContainer).css('display', 'block');
+            $(okayWinPop).css('pointerEvents', 'none');
+
+            setTimeout(function() {
+                $(bonusPopupContainerOverlay).css('transform', 'scale(1)');
+                setTimeout(function() {
+                    $('.bonusPopupContainer-overlay').addClass("animatePopup");
+                    setTimeout(function(){
+                        $(okayWinPop).css('pointerEvents', 'auto');
+                    }, 1000)
+                }, 100); 
+            }, 100); 
+        }
+
+        // bonus confirm function
+        okayWinPop.addEventListener('click', function () {
+            bonusConfirmSound.play();
+            closeConfirmBonusConPopup();
+        });
+
+        bonusPopUpClose.addEventListener('click', function () {
+            closeConfirmBonusConPopup();
+        });
+
+        function closeConfirmBonusConPopup() {
+            bonusSound.pause();
+            bonusSound.loop = false;
+            setTimeout(function() {
+                $(bonusPopupContainer).css('display', 'none');
+                $(bonusPopupContainerOverlay).css('transform', 'scale(0)');
+                $('.bonusPopupContainer-overlay').removeClass("animatePopup");
+                $('#spinButton').css('pointerEvents', 'auto');
+            }, 100); 
+        }
+        //---------------------------------------------------
+
+        /// open & close function bonus record pop up
+        bonusRecordBtn.addEventListener('click', function () {
+            if (ifLoggedIn) {
+                setTimeout(() => $(bonusRecordConPopUp).css('display', 'flex'), 100);
+            } else {
+                notLoggedInFunction();
+            }
+        });
+        
+        bonusRecordPopupClose.addEventListener('click', function () {
+            setTimeout(() => $(bonusRecordConPopUp).css('display', 'none'), 100);
+        });
+        //---------------------------------------------------
+
+        // Play volume bg
+        var volumeSoundTriggered = false;
+        volumeMenu.addEventListener('click', function () {
+            if (volumeMenu.classList.contains('speaker')) {
+                audioBG.pause();
+                audioBG.loop = false;
+                volumeMenu.classList.add("mute");
+                volumeMenu.classList.remove("speaker");
+                volumeSoundTriggered = false;
+            } else {
+                audioBG.play();
+                audioBG.loop = true;
+                volumeMenu.classList.add("speaker");
+                volumeMenu.classList.remove("mute");
+                volumeSoundTriggered = true;
+            }
+        });
+        //---------------------------------------------------
+
+        // floating lantern
+        function floatingLanternFunc() {
+            const floatingLantern = document.getElementById("floatingLantern");
+
+            for (let i = 1; i <= 2; i++) {
+                const lanternContainer = document.createElement("div");
+                lanternContainer.id = `floatingLantern_${i}`;
+                floatingLantern.appendChild(lanternContainer);
+
+                for (let j = 1; j <= 3; j++) {
+                    const lantern = document.createElement("div");
+                    lantern.className = `floatingElement lantern_${j}`;
+                    lanternContainer.appendChild(lantern);
+                }
+            }
+        }
+
+        floatingLanternFunc();
+
+        var floatingLantern1 = document.getElementById("floatingLantern_1");
+        var floatingLantern2 = document.getElementById("floatingLantern_2");
+        
+        function floatingLanternAnimation() {
+            floatingLantern1.style.animation = 'floatinglantern 9s linear';
+            setTimeout(() => floatingLantern2.style.animation = 'floatinglantern 9s linear', 6000);
+            setTimeout(() => floatingLantern1.style.animation = '', 9000);
+            setTimeout(() => floatingLantern1.style.animation = 'floatinglantern 9s linear', 12000);
+            setTimeout(() => floatingLantern2.style.animation = '', 15000);
+            setTimeout(() => floatingLantern2.style.animation = 'floatinglantern 9s linear', 18000);
+            setTimeout(() => floatingLantern1.style.animation = '', 21000);
+            setTimeout(() => floatingLantern2.style.animation = '', 27000);
+            setTimeout(floatingLanternAnimation, 27000);
+        }
+
+        floatingLanternAnimation();
+    });
+</script>
+</html>
