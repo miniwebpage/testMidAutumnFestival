@@ -1,0 +1,288 @@
+#midAutumnRoulette {
+    width: 100%;
+}
+
+.midAutumnFestival {
+    left: 0;
+    height: 100%;
+    width: 100%;    
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+img.midAutumnFestival-title {
+    width: 50%;
+}
+
+.time-info {
+    padding: 0px;
+    background: transparent;
+    border-radius: 0px;
+    border: none;
+    margin: 0px 0px 10px 0px;
+    text-align: center;
+}
+
+.rouletteSpin-countlabel {
+    position: relative;
+    background: #2a0846;
+    bottom: 0;
+    z-index: auto;
+    color: white;
+    font-size: 26px;
+    border-radius: 0px;
+    border-width: 3px 0 3px 0;
+    border-style: solid;
+    border-color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.rouletteSpinnerContainer {
+    top: 61px;
+    margin-bottom: 152px;
+}
+
+.rulesConditionContainer {
+    width: 95%!important;
+    padding-left: 0px;
+    padding-bottom: 25px;
+}
+
+.rulesConditionContainer::before {
+    content: '';
+    position: absolute;
+    top: -177px;
+    right: -180px;
+    height: 202px;
+    width: 424px;
+    background-image: url(../images/mobile/rabbit.png);
+    background-size: contain;
+    background-position: initial;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+img.arHeader-title {
+    width: 250px;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.activityRules {
+    padding-top: 39px;
+    background-color: rgba(41, 4, 64, 0.86);
+    border-radius: 15px;
+    border: 2px solid white;
+}
+
+p.purpleTxt {
+    color: #ffd800;
+}
+
+p.vermillionTxt, .bulletTxt {
+    color: #fff;
+}
+
+.arBody-con {
+    direction: rtl;
+    position: relative;
+    left: 1%;
+}
+
+p.purpleTxt, p.vermillionTxt, .bulletTxt {
+    direction: ltr;
+}
+
+.arBody-con::-webkit-scrollbar-thumb {
+    background: #fff;
+}
+
+.menuBtn {
+    width: 100%;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 18px;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.menu-label {
+    pointer-events: auto;
+}
+
+.menu-label:nth-child(2) {
+    margin: 0px 0px;
+    position: absolute;
+    top: 18px;
+    left: 18px;
+}
+
+.menu-label:nth-child(1) {
+    margin-bottom: 15px;
+}
+
+.div-volume {
+    margin: 0px 0px;
+}
+
+@media screen and (max-width: 541px){
+    .menuBtn img.home-ico, 
+    .menuBtn img.bonus-ico, 
+    .div-volume img.speaker-ico, 
+    .div-volume img.mute-ico {
+        height: 40px;
+    }
+
+    .menu-label span, .time-info, .arHeader-con, .rouletteSpin-countlabel {
+        font-size: 18px;
+    }
+
+    .rouletteSpinnerContainer {
+        top: 35px;
+        margin-bottom: 98px;
+        transform: scale(0.9);
+    }
+
+    p.purpleTxt, p.vermillionTxt, p.bulletTxt {
+        font-size: 14px;
+    }
+
+    .arBody-con {
+        height: 92%;
+    }
+
+    .bonusRecordContainer-Overlay, .notLoggedIn-Overlay {
+        transform: scale(0.9);
+    }
+
+    .rulesConditionContainer::before {
+        top: -143px;
+        right: -231px;
+        height: 148px;
+        width: 411px;
+    }
+
+    .bpuCon {
+        transform: scale(0.8);
+    }
+
+    .closeButton-popup {
+        top: -94px;
+        height: 65px;
+        width: 65px;
+    }
+
+    .closeButton-popup::after {
+        transform: translate(-50%, -50%) scale(3);
+    }
+}
+
+@media screen and (max-width: 431px){
+    .menuBtn {
+        padding: 10px;
+    }
+
+    .menu-label:nth-child(2) {
+        top: 10px;
+        left: 10px;
+    }
+
+    .time-info {
+        width: 64%;
+        margin: 0px auto 10px auto;
+    }
+
+    .rouletteSpinnerContainer {
+        top: -6px;
+        margin-bottom: 21px;
+        transform: scale(0.75);
+    }
+
+    .floatingElement {
+        height: 150px;
+        width: 150px;
+    }
+
+    .rulesConditionContainer::before {
+        top: -146px;
+        right: -250px;
+    }
+
+    .bonusRecordContainer-Overlay, .notLoggedIn-Overlay {
+        transform: scale(0.8);
+    }
+
+    .bpuCon {
+        transform: scale(0.65);
+    }
+
+}
+
+@media screen and (max-width: 391px){
+    .closeButton-popup {
+        right: -14px;
+        height: 55px;
+        width: 55px;
+    }
+
+    .rouletteSpinnerContainer {
+        top: -18px;
+        margin-bottom: -3px;
+        transform: scale(0.7);
+    }
+
+    .rulesConditionContainer::before {
+        top: -135px;
+        right: -250px;
+        height: 131px;
+        width: 384px;
+    }
+
+    .bpuCon {
+        transform: scale(0.6);
+    }
+
+}
+
+@media screen and (max-width: 361px){
+    .rouletteSpinnerContainer {
+        top: -35px;
+        margin-bottom: -45px;
+        transform: scale(0.65);
+    }
+
+    .floatingElement {
+        height: 100px;
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 345px){
+    .menuBtn {
+        padding: 8px;
+    }
+
+    .menu-label:nth-child(2) {
+        top: 8px;
+        left: 8px;
+    }
+
+    .bonusRecordContainer-Overlay, .notLoggedIn-Overlay {
+        transform: scale(0.7);
+    }
+}
+
+@media screen and (max-width: 321px){
+    .rouletteSpinnerContainer {
+        top: -52px;
+        margin-bottom: -68px;
+        transform: scale(0.6);
+    }
+}
