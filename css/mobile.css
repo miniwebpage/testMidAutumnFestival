@@ -175,12 +175,21 @@ p.purpleTxt, p.vermillionTxt, .bulletTxt {
 
     .closeButton-popup {
         top: -94px;
-        height: 65px;
-        width: 65px;
+        height: 55px;
+        width: 55px;
     }
 
     .closeButton-popup::after {
-        top: 52%;
+        top: 53%;
+        transform: translate(-50%, -50%) scale(2.5);
+    }
+
+    #bonusPopupContainer .closeButton-popup {
+        height: 60px;
+        width: 60px;
+    }
+
+    #bonusPopupContainer .closeButton-popup::after {
         transform: translate(-50%, -50%) scale(3);
     }
 }
@@ -202,12 +211,6 @@ p.purpleTxt, p.vermillionTxt, .bulletTxt {
 
     .closeButton-popup {
         right: -19px;
-        height: 55px;
-        width: 55px;
-    }
-
-    .closeButton-popup::after {
-        transform: translate(-50%, -50%) scale(2.5);
     }
 
     .rouletteSpinnerContainer {
