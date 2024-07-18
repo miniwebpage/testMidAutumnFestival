@@ -199,6 +199,16 @@ p.purpleTxt, p.vermillionTxt, .bulletTxt {
         margin: 0px auto 10px auto;
     }
 
+    .closeButton-popup {
+        right: -19px;
+        height: 55px;
+        width: 55px;
+    }
+
+    .closeButton-popup::after {
+        transform: translate(-50%, -50%) scale(2.5);
+    }
+
     .rouletteSpinnerContainer {
         top: -6px;
         margin-bottom: 21px;
