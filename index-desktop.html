@@ -124,12 +124,14 @@
     <!-- bonus price modal  -->
     <div id="bonusPopupContainer">
         <div id="bonusPopupContainerOverlay" class="bonusPopupContainer-overlay">
-            <div id="bonusPopupContainerInner" class="bonusPopupContainer-inner" style="background-image: url(images/popup/pop.png);">
-                <div id="bonusPopUpClose" class="closeButton-popup"></div>
-                <p class="mb-0 wthTxtBorder" style="--edgeColor:#fff;">1888</p>
-                <img id="okayWinPop" class="okayWinPop" src="images/popup/ok-btn.png" alt="Okay button">
-                <div class="color-cannon1" style="background-image: url(images/popup/color-cannon1.png);"></div>
-                <div class="color-cannon2" style="background-image: url(images/popup/color-cannon2.png);"></div>
+            <div class="bpuCon">
+                <div id="bonusPopupContainerInner" class="bonusPopupContainer-inner" style="background-image: url(images/popup/pop.png);">
+                    <div id="bonusPopUpClose" class="closeButton-popup"></div>
+                    <p id="bonusTxt" class="mb-0 wthTxtBorder" style="--edgeColor:#fff;"></p>
+                    <img id="okayWinPop" class="okayWinPop" src="images/popup/ok-btn.png" alt="Okay button">
+                    <div class="color-cannon1" style="background-image: url(images/popup/color-cannon1.png);"></div>
+                    <div class="color-cannon2" style="background-image: url(images/popup/color-cannon2.png);"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -211,10 +213,6 @@
 <script src="js/bootstrap.bundle.min.js"></script>
 <script>
     // const isMobile = '{$isMobile}';
-    // const isMobile = screen.width <= 767;
-    console.log("Browser width: " + window.innerWidth);
-    console.log("Browser height: " + window.innerHeight);
-
     // -------------------------------------------
     document.addEventListener('DOMContentLoaded', function() {
         var audioBG = document.getElementById("audioBG");
@@ -238,6 +236,7 @@
         var bonusPopUpClose = document.getElementById('bonusPopUpClose');
         var okayWinPop = document.getElementById('okayWinPop');
         var bonusConfirmSound = document.getElementById('bonusConfirmSound');
+        var bonusTxt = document.getElementById('bonusTxt');
 
         var bonusRecordBtn = document.getElementById('bonusRecordBtn');
         var bonusRecordConPopUp = document.getElementById('bonusRecordConPopUp');
@@ -250,11 +249,17 @@
         // if not logged in function
         var ifLoggedIn = true;
         function notLoggedInFunction() {
-            $(notLoggedInPopUp).css('display', 'flex');
+            setTimeout(() => {
+                document.body.style.overflow = 'hidden';
+                $(notLoggedInPopUp).css('display', 'flex');
+            }, 100);
         }
         
         function closeConfirmNotLoggedIn() {
-            $(notLoggedInPopUp).css('display', 'none');
+            setTimeout(() => {
+                document.body.style = '';
+                $(notLoggedInPopUp).css('display', 'none');
+            }, 100);
         }
 
         notLoggedInPopupClose.addEventListener('click', function () {
@@ -274,7 +279,7 @@
         //---------------------------------------------------
 
         // Function to update target variables
-        var targetValue = 1888;
+        var targetValue = 68;
         function updateTargetVariables(value) {
             if (value === 88) {
                 minDegrees = 304; 
@@ -308,6 +313,8 @@
         spinButton.addEventListener('click', function () {
             if (ifLoggedIn) {
                 if (limitSpinCount > 0) {
+                    bonusTxt.textContent +=  targetValue; //<- append the target bonus in bonus modal
+
                     clickSound.currentTime = 0;
                     clickSound.play(); 
                     setTimeout(function() {
@@ -430,6 +437,7 @@
             audioBG.pause();
             audioBG.loop = false;
             $(bonusPopupContainer).css('display', 'block');
+            document.body.style.overflow = 'hidden';
             $(okayWinPop).css('pointerEvents', 'none');
 
             setTimeout(function() {
@@ -458,6 +466,7 @@
             bonusSound.loop = false;
             setTimeout(function() {
                 $(bonusPopupContainer).css('display', 'none');
+                document.body.style = '';
                 $(bonusPopupContainerOverlay).css('transform', 'scale(0)');
                 $('.bonusPopupContainer-overlay').removeClass("animatePopup");
                 $('#spinButton').css('pointerEvents', 'auto');
@@ -468,14 +477,20 @@
         /// open & close function bonus record pop up
         bonusRecordBtn.addEventListener('click', function () {
             if (ifLoggedIn) {
-                setTimeout(() => $(bonusRecordConPopUp).css('display', 'flex'), 100);
+                setTimeout(() => {
+                    document.body.style.overflow = 'hidden';
+                    $(bonusRecordConPopUp).css('display', 'flex');
+                }, 100);
             } else {
                 notLoggedInFunction();
             }
         });
         
         bonusRecordPopupClose.addEventListener('click', function () {
-            setTimeout(() => $(bonusRecordConPopUp).css('display', 'none'), 100);
+            setTimeout(() => {
+                document.body.style = '';
+                $(bonusRecordConPopUp).css('display', 'none');
+            }, 100);
         });
         //---------------------------------------------------
 
