@@ -180,6 +180,7 @@ p.purpleTxt, p.vermillionTxt, .bulletTxt {
     }
 
     .closeButton-popup::after {
+        top: 52%;
         transform: translate(-50%, -50%) scale(3);
     }
 }
