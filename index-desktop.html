@@ -201,10 +201,26 @@
             </div>
         </div>
     </div>
-    <!--tempo for only condition of if logged in or not-->
+    <!--tempo for only condition of if logged in, spin limit count & selected target value-->
     <div class="tempoCntrl" style="position: fixed;background: white;padding: 5px 15px;bottom: 0;left: 0;z-index: 9;">
-        <label><input type="radio" name="ifLoggedInCondition" value="true" checked>logged In</label>
-        <label><input type="radio" name="ifLoggedInCondition" value="false">Not Logged In</label>         
+        <div class="">
+            <label for="trgtBonusVal">Target Bonus Val</label>
+            <select id="trgtBonusVal" name="trgtBonusVal">
+                <option value="88">88</option>
+                <option value="888">888</option>
+                <option value="188">188</option>
+                <option value="68" selected>68</option>
+                <option value="1888">1888</option>
+            </select>            
+        </div>
+        <div class="">
+            <label><input type="radio" name="ifLoggedInCondition" value="true" checked>logged In</label>
+            <label><input type="radio" name="ifLoggedInCondition" value="false">Not Logged In</label> 
+        </div>   
+        <div class="">
+            <label><input type="radio" name="ifSpinLimitCondition" value="1" checked>not 0 spin limit</label>
+            <label><input type="radio" name="ifSpinLimitCondition" value="0">0 spin limit</label> 
+        </div>        
     </div>
 </body>
 <audio id="audioBG" src="sounds/festive-celebration-bgm.mp3" loop></audio>
@@ -284,14 +300,14 @@
         //---------------------------------------------------
 
         // Function to update spin count display    
-        let limitSpinCount = 4;
+        let limitSpinCount = '1';
         function updateSpinCountDisplay() {
             spinCountDisplay.textContent = ifLoggedIn ? limitSpinCount : '0';
         }
         //---------------------------------------------------
 
         // Function to update target variables
-        var targetValue = 68;
+        let targetValue = 68;
         function updateTargetVariables(value) {
             if (value === 88) {
                 minDegrees = 304; 
@@ -400,7 +416,7 @@
                     }, 100);
                 } else {
                     console.log('Reached spin limit');
-                    $('#spinButton').css('pointerEvents', 'none');
+                    return;
                 }   
             } else{
                 notLoggedInFunction();
@@ -482,6 +498,9 @@
                 $(bonusPopupContainerOverlay).css('transform', 'scale(0)');
                 $('.bonusPopupContainer-overlay').removeClass("animatePopup");
                 $('#spinButton').css('pointerEvents', 'auto');
+                setTimeout(function() {
+                    location.reload();
+                }, 500); 
             }, 100); 
         }
         //---------------------------------------------------
@@ -561,20 +580,36 @@
 
         floatingLanternAnimation();
 
-        // ---TEMPORARY FUNCTION FOR THE If logged in condition and Spin Count Limit condition---------
-        function updateLoggedInStatus() {
-            let radios = document.getElementsByName('ifLoggedInCondition');
-            radios.forEach(radio => {
-                if (radio.checked) { ifLoggedIn = radio.value === 'true';}
-            });
-            updateSpinCountDisplay();
-        }
-        updateLoggedInStatus();
-        document.getElementsByName('ifLoggedInCondition').forEach(radio => {
-            radio.addEventListener('change', updateLoggedInStatus);
+        // ---TEMPORARY FUNCTION FOR THE condition of If logged in, Spin Count Limit & select target bonus value---------
+        var selectElement = document.getElementById('trgtBonusVal');
+        selectElement.addEventListener('change', function() { //<-- select target Bonus value
+            var selectedValue = parseInt(selectElement.value);
+            targetValue = selectedValue;
+            updateTargetVariables(targetValue);
         });
 
-        // ----------------------------------------------------------------------------------
+        function updateLoggedInStatus() { //<-- if logged in radio condition
+            let r1 = document.getElementsByName('ifLoggedInCondition');
+            r1.forEach(x => { if (x.checked) { ifLoggedIn = x.value === 'true';} });
+            updateSpinCountDisplay();
+        }
+    
+        updateLoggedInStatus();
+        document.getElementsByName('ifLoggedInCondition').forEach(x => {
+            x.addEventListener('change', updateLoggedInStatus);
+        });
+
+        function updateSpinLimitStatus() { //<-Spin count radio condition
+            let r2 = document.getElementsByName('ifSpinLimitCondition');
+            r2.forEach(y => { if (y.checked) { limitSpinCount = y.value;} });
+            updateSpinCountDisplay();
+        }
+
+        updateSpinLimitStatus();
+        document.getElementsByName('ifSpinLimitCondition').forEach(y => {
+            y.addEventListener('change', updateSpinLimitStatus);
+        });
+        // --------------------------------------------------------------------
     });
 </script>
 </html>
